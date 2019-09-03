@@ -13,8 +13,10 @@ public class NQueens{
 
 	public boolean placeNQueens(){
 
-		return placeNQueens(this.col);
-
+		if (this.n <= 0){
+			throw new IllegalArgumentException ("N can't be smaller than zero.");
+		}
+		 return placeNQueens(this.col);
 	}
 
 	public boolean placeNQueens(int col){
@@ -23,9 +25,7 @@ public class NQueens{
 			return true;
 		}
 
-		if (this.n < 0){
-			throw new IllegalArgumentException ("N can't be smaller than zero.");
-		}
+		
 		
 		for(int i = 0; i < this.n ; i++){
 			if(CanQueenbeThere(i,col)){
