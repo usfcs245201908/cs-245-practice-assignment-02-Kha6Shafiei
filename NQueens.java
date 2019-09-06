@@ -24,13 +24,12 @@ public class NQueens{
 		if(col == this.n ) {
 			return true;
 		}
-
-		
 		
 		for(int i = 0; i < this.n ; i++){
 			if(CanQueenbeThere(i,col)){
 				this.board[i][col] = 1;
 				if(placeNQueens(col + 1)){ 
+					printToConsole();
 					return true;
 				}
 				this.board[i][col] = 0;
@@ -70,6 +69,8 @@ public class NQueens{
 
 			System.out.println();
 		}
+		System.out.println("\n");
+
 	}
 
 	
